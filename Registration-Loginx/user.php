@@ -8,7 +8,10 @@ else {
    $user = $_SESSION['username'];
 //    echo $userDp;
     if (file_exists('uploads/'.$user.'.jpg')) {
-        echo '<img src="uploads/'.$user.'.png" style="width:100px; height:100px;" alt="" srcset="">';
+        echo '<img src="uploads/'.$user.'.jpg" style="width:100px; height:100px;" alt="" srcset="">';
+    }
+    elseif (file_exists('uploads/'.$user.'.jpeg')) {
+        echo '<img src="uploads/'.$user.'.jpeg" style="width:100px; height:100px;" alt="" srcset="">';
     }
         elseif (file_exists('uploads/'.$user.'.png')) {
             echo '<img src="uploads/'.$user.'.png" style="width:100px; height:100px;" alt="" srcset="">';

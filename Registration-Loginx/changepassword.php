@@ -8,6 +8,9 @@ $confirmNewPassword = md5(trim($_POST['confirm-new-password']));
 if (isset($_POST['login'])) {
   header("location:login.php");
 }
+if (isset($_POST['register'])) {
+  header("location:registration.php");
+}
 if (isset($_POST['changepassword'])) {
 if (!empty($username)) {
    if (!empty($email)) {
@@ -124,6 +127,7 @@ if (!empty($username)) {
  
 <div class="btn-container"><button type="submit" name="changepassword" class="btn">Change Password</button></div>
 <div class="btn-container mt-5"><button type="submit" name="login" class="btn">Login</button></div>
+<div class="btn-container mt-5"><button type="submit" name="register" class="btn">Register</button></div>
 
 
 </div>
