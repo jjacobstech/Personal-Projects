@@ -6,7 +6,7 @@ $username = trim($_POST['username']);
 $email = trim($_POST['email']);
 $password = $_POST['password'];
 $confirmpassword = $_POST['confirmpassword'];
-error_reporting(0);
+// error_reporting(0);
 
 if (isset($_POST['login'])) {
     header("location:login.php?");
@@ -66,7 +66,8 @@ if (isset($_POST['register'])) {
            $fileSize = $_FILES['file']['size'];
            $fileLocation = $_FILES['file']['tmp_name'];
            $fileError = $_FILES['file']['error'];
-           $fileExtension = strtolower(end(explode('.',$file)));
+           $fileext = explode('.',$file);
+           $fileExtension = strtolower(end($fileext));
            $allowedFormats = array('png','jpg','jpeg');
            // echo $fileLocation;
            if ($fileError == 0) {
@@ -76,7 +77,6 @@ if (isset($_POST['register'])) {
                   move_uploaded_file($fileLocation,$fileDestination);
                   echo '<div class="notifier" id="alert">
                   <div class="alert alert-success alert-dismissible show fade" style="text-align:center;  role="alert">
-                  
                   <strong >Registered</strong> </div>
                   </div>';
                
